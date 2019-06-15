@@ -1,0 +1,35 @@
+1. Make a new database named "signup"
+
+2.Enter the following SQL into the phpmyadmin command line:
+
+CREATE TABLE `register` (
+  `user_id` int(11) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `pass` varchar(40) NOT NULL,
+  `type` enum('user','admin') NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+3. Enter this code next
+
+INSERT INTO `register` (`user_id`, `email`, `pass`, `type`) VALUES
+(5, 'manager@vet.com', 'pass', 'admin'),
+(4, 'staff@vet.com', 'pass', 'user');
+
+4. Then add this
+
+ALTER TABLE `register`
+  ADD PRIMARY KEY (`user_id`);
+
+5. Finish with this
+
+ALTER TABLE `register`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+
+-------------------------------------------------------------------
+
+You may need to change file directories within the PHP files so 
+they work on your XAMPP at home or college. 
+
+
+
